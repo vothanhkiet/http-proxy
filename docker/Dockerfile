@@ -20,7 +20,8 @@ RUN go get -d -v
 
 # Build the binary
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -a -installsuffix cgo -o /go/bin/proxy .
-
+RUN apk add upx --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community
+RUN upx /go/bin/proxy
 RUN ls /go/bin
 
 ############################

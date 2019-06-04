@@ -1,5 +1,5 @@
 REGISTRY_URL ?= vothanhkiet/http-proxy
-TAG ?= 1.0.0
+TAG ?= 1.0.1
 
 build:
 	docker build -f docker/Dockerfile --squash -t ${REGISTRY_URL}:latest -t ${REGISTRY_URL}:${TAG} .
